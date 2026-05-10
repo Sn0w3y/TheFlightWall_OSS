@@ -4,8 +4,7 @@
 #include <vector>
 #include "interfaces/BaseDisplay.h"
 
-class FastLED_NeoMatrix;
-struct CRGB;
+class MatrixPanel_I2S_DMA;
 
 class NeoMatrixDisplay : public BaseDisplay
 {
@@ -20,12 +19,10 @@ public:
     void showLoading();
 
 private:
-    FastLED_NeoMatrix *_matrix = nullptr;
-    CRGB *_leds = nullptr;
+    MatrixPanel_I2S_DMA *_matrix = nullptr;
 
     uint16_t _matrixWidth = 0;
     uint16_t _matrixHeight = 0;
-    uint32_t _numPixels = 0;
 
     size_t _currentFlightIndex = 0;
     unsigned long _lastCycleMs = 0;
